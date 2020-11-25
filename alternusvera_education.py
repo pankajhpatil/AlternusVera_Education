@@ -27,6 +27,7 @@ nltk.download('wordnet')
 nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 stop_words = set(stopwords.words('english'))
+import os
 
 Label_map={0: 'barely-true',
  1: 'false',
@@ -82,6 +83,10 @@ def predictLable(text):
        'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'WDT', 'WP',
        'WP$', 'WRB'])
   
+
+  cwd = os.getcwd()
+  print(cwd)
+
   with open('./knn_speaker_Model.pkl', 'rb') as file:  
     knn_speaker_Model = pickle.load(file)
   
