@@ -82,7 +82,7 @@ def predictLable(text):
        'SYM', 'TO', 'UH', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ', 'WDT', 'WP',
        'WP$', 'WRB'])
   
-  with open('knn_speaker_Model.pkl', 'rb') as file:  
+  with open('./knn_speaker_Model.pkl', 'rb') as file:  
     knn_speaker_Model = pickle.load(file)
   
   # print(spearker_df)
@@ -102,7 +102,7 @@ def predictLable(text):
     if speaker_map[key] == src:
       df_test['Source_cat']=key
   
-  with open('knn_truth_Model.pkl', 'rb') as file:  
+  with open('./knn_truth_Model.pkl', 'rb') as file:  
     knn_truth_Model = pickle.load(file)
 
   source_df = df_test.filter(items=['Source_cat', 'CC', 'CD',
